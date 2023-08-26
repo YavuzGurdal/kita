@@ -18,7 +18,7 @@ const Projekte = () => {
                 </div>
                 <div className="imgWrapper imgWrapperProjekte">
                     <img src="fusganger.jpeg" alt="" />
-                    <h2>Fussgägerführerschein für Kinder</h2>
+                    <h2>Fussgängerführerschein für Kinder</h2>
                 </div>
                 {/* </div> */}
             </div>

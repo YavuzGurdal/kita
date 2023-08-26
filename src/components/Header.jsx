@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import { BsSunFill, BsFillMoonStarsFill } from 'react-icons/bs';
 // import { MdOutlineLogout } from 'react-icons/md';
 // import { ThemeContext } from '../context/ThemeContext';
@@ -11,6 +11,22 @@ const Header = () => {
     // const toogleTheme = () => {
     //     setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
     // }
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Temizlik işlevi
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <div id="header">
             <div className="headerWrapper">
@@ -47,7 +63,11 @@ const Header = () => {
                     <ul>
                         {/* <li>button 1</li> */}
                         {/* <li><MdOutlineLogout size={20} /> Anmeldeformular</li> */}
-                        <li>Anmeldeformular</li>
+                        {windowWidth < 481 ? (
+                            <li>AF</li>
+                        ) : (
+                            <li>Anmeldeformular</li>
+                        )}
                         {/* <li onClick={toogleTheme}>{theme === 'light' ? <BsFillMoonStarsFill size={20} style={{ color: '#666' }} /> : <BsSunFill size={20} />}</li> */}
                     </ul>
                 </div>
