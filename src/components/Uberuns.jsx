@@ -4,6 +4,9 @@ const Uberuns = () => {
 
     return (
         <div id="content">
+            <div className="logoContainer">
+                <img src="awo.png" alt="" />
+            </div>
             <h2 className="contentTitle">ÜBER UNS</h2>
 
             <div className="contentWrapper">

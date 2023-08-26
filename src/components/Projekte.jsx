@@ -5,7 +5,11 @@ const Projekte = () => {
 
     return (
         <div id="content">
+            <div className="logoContainer">
+                <img src="awo.png" alt="" />
+            </div>
             <h2 className="contentTitle">PROJEKTE</h2>
+
             <div className="contentWrapperProjekte">
                 {/* <div className="rightArea" > */}
                 <div className="imgWrapper imgWrapperProjekte">
